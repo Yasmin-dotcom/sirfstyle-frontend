@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SirfStyle™ — Coming Soon</title>
+  <meta name="description" content="SirfStyle — Effortless basics. Confident fits. Be Different. Be You. Coming soon.">
+  <style>
+    :root{ --maroon:#5A1A1D; --beige:#F4EDE2; }
+    *{box-sizing:border-box} html,body{height:100%;margin:0;background:var(--maroon);color:var(--beige);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:48px 20px}
+    .card{max-width:760px;width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(244,237,226,.12);
+      border-radius:28px;padding:28px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;border:1px solid rgba(244,237,226,.18);
+      background:var(--maroon)}
+    .logo img{width:48px;height:48px}
+    h1{margin:0;font-size:28px}
+    .pill{display:inline-block;margin:6px 0 10px;background:rgba(249,246,238,.08);border:1px solid rgba(249,246,238,.15);
+      padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .tg{margin-top:8px;line-height:1.6}
+    form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    input[type=email]{flex:1;min-width:220px;padding:12px 14px;border-radius:12px;border:1px solid rgba(244,237,226,.28);
+      background:rgba(0,0,0,.15);color:var(--beige)}
+    button{padding:12px 16px;border-radius:12px;border:0;background:var(--beige);color:var(--maroon);font-weight:700}
+    .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .link{padding:10px 14px;border-radius:12px;border:1px solid rgba(244,237,226,.25);text-decoration:none;color:var(--beige)}
+    .bizinfo{margin-top:28px;padding-top:18px;border-top:1px solid rgba(244,237,226,.15);font-size:13px;opacity:.85;line-height:1.6}
+    footer{text-align:center;opacity:.7;margin-top:18px;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="brand">
+        <div class="logo"><img src='assets/logo.svg' alt='logo'></div>
+        <div>
+          <h1>SirfStyle™</h1>
+          <div class="pill">Coming Soon</div>
+        </div>
+      </div>
+
+      <div class="tg">
+        <strong>Effortless basics. Confident fits.</strong><br>
+        Be Different. Be You.
+      </div>
+
+      <form onsubmit="subscribe(event)">
+        <input id="email" type="email" placeholder="Enter email for launch updates" required />
+        <button type="submit">Notify Me</button>
+      </form>
+
+      <div id="msg" style="display:none;margin-top:8px">Thanks! We'll notify you when we launch.</div>
+
+      <div class="links">
+        <a class="link" href="https://instagram.com/sirfstyle" target="_blank">Instagram</a>
+        <a class="link" href="mailto:contact@sirfstyle.in">Email Us</a>
+      </div>
+
+      <!-- Business Verification Section -->
+      <div class="bizinfo">
+        <strong>SirfStyle</strong> is a GST registered business based in Kolkata, West Bengal, India.<br>
+        GSTIN: 19EWEPK8824A1ZH<br>
+        Official Email: contact@sirfstyle.in<br><br>
+        <strong>InvoiceGo</strong> is a SaaS product owned and operated by SirfStyle.
+      </div>
+
+      <footer>© <span id="y"></span> SirfStyle. All rights reserved.</footer>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  function subscribe(e){
+    e.preventDefault();
+    var email = document.getElementById('email').value;
+    window.location.href='mailto:contact@sirfstyle.in?subject=Add%20me%20to%20SirfStyle%20launch%20list&body='+encodeURIComponent(email);
+    document.getElementById('msg').style.display='block';
+  }
+</script>
+</body>
+</html>
